@@ -5,7 +5,9 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Admin <sup></sup></div>
+    <div class="sidebar-brand-text mx-3">Admin <sup>
+      
+    </sup></div>
   </a>
   
   <!-- Divider -->
@@ -19,9 +21,9 @@
   </li>
   
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('products') }}">
+    <a class="nav-link" href="{{ route('submission') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Product</span></a>
+      <span>Submission</span></a>
   </li>
   
   <li class="nav-item">

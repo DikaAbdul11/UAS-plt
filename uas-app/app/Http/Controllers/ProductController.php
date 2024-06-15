@@ -12,9 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::orderBy('created_at', 'DESC')->get();
+        $submission = Product::orderBy('created_at', 'DESC')->get();
   
-        return view('products.index', compact('product'));
+        return view('submission.index', compact('submission'));
     }
   
     /**
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('submission.create');
     }
   
     /**
@@ -32,7 +32,7 @@ class ProductController extends Controller
     {
         Product::create($request->all());
  
-        return redirect()->route('products')->with('success', 'Product added successfully');
+        return redirect()->route('submission')->with('success', 'Your Submission added successfully');
     }
   
     /**
@@ -40,9 +40,9 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $product = Product::findOrFail($id);
+        $submission = Product::findOrFail($id);
   
-        return view('products.show', compact('product'));
+        return view('submission.show', compact('submission'));
     }
   
     /**
@@ -50,9 +50,9 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        $product = Product::findOrFail($id);
+        $submission = Product::findOrFail($id);
   
-        return view('products.edit', compact('product'));
+        return view('submission.edit', compact('submission'));
     }
   
     /**
@@ -60,11 +60,11 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $product = Product::findOrFail($id);
+        $submission = Product::findOrFail($id);
   
-        $product->update($request->all());
+        $submission->update($request->all());
   
-        return redirect()->route('products')->with('success', 'product updated successfully');
+        return redirect()->route('submission')->with('success', 'Your submission updated successfully');
     }
   
     /**
@@ -72,10 +72,10 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        $product = Product::findOrFail($id);
+        $submission = Product::findOrFail($id);
   
-        $product->delete();
+        $submission->delete();
   
-        return redirect()->route('products')->with('success', 'product deleted successfully');
+        return redirect()->route('submission')->with('success', 'file deleted successfully');
     }
 }
